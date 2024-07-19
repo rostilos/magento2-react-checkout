@@ -7,6 +7,9 @@ import TextInput from '../../../common/Form/TextInput';
 function InPostAddressFieldSet({ formikData, ...rest }) {
   const { fields } = useShippingAddressFormikContext();
   const { onBlur, onFocus } = rest;
+  const website = window.location.host.includes('angelprof')
+    ? 'angelprof'
+    : undefined;
   return (
     <div>
       <div className="w-full grow-1">
@@ -14,6 +17,7 @@ function InPostAddressFieldSet({ formikData, ...rest }) {
           label={__('City')}
           name={fields.city}
           id="cityInPost"
+          required={website === 'angelprof'}
           formikData={formikData}
           className="border-2 w-full form-input"
           onBlur={onBlur}
@@ -26,6 +30,7 @@ function InPostAddressFieldSet({ formikData, ...rest }) {
             label={__('Street')}
             name={`${fields.street}[0]`}
             id="streetInPost"
+            required={website === 'angelprof'}
             formikData={formikData}
             className="border-2 w-full form-input"
             onBlur={onBlur}
@@ -37,6 +42,7 @@ function InPostAddressFieldSet({ formikData, ...rest }) {
             label={__('House')}
             name={`${fields.street}[1]`}
             id="houseNumberInpost"
+            required={website === 'angelprof'}
             formikData={formikData}
             className="border-2 w-full form-input"
             onBlur={onBlur}
