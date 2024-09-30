@@ -181,7 +181,6 @@ function ShippingAddressForm({ children }) {
           label={__('Phone (required)')}
           autoComplete="new-password"
           name={fields.phone}
-          readonly
           formikData={formikData}
           onKeyDown={handleKeyDown}
           onBlur={handleAddressFieldOnBlur}
